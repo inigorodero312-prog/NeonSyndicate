@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- SDK de GamePix: obligatorio como PRIMER script del <head> (requisito de GamePix) -->
+<script src="https://integration.gamepix.com/sdk/v3/gamepix.sdk.js"></script>
+<meta charset="utf-8">
+<title>Neon Syndicate</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob:; script-src 'self' https: 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' data: blob: https:; connect-src 'self' https:; frame-src https:; child-src https:; worker-src 'self' blob:;">
+<style>
+  html, body { margin: 0; height: 100%; background: #05040a; overflow: hidden; }
+  canvas { display: block; position: fixed; inset: 0; width: 100vw; height: 100vh; outline: none; touch-action: none; }
+  html { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; overscroll-behavior: none; touch-action: none; }
+  /* Pantalla de carga inicial (GamePix la exige). El juego la borra solo al tener el arte listo. */
+  #ld { position: fixed; inset: 0; z-index: 9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+        background: radial-gradient(circle at 50% 45%, #170a24 0%, #05040a 70%); font-family: system-ui, "Segoe UI", Roboto, sans-serif; }
+  #ld .brand { font-size: clamp(22px, 5.4vmin, 46px); font-weight: 800; letter-spacing: 6px; color: #ff2e88; text-shadow: 0 0 18px rgba(255,46,136,.55); }
+  #ld .sub { font-size: clamp(11px, 2.1vmin, 15px); letter-spacing: 3px; color: #12e6ff; font-weight: 700; }
+  #ld .bar { width: min(58vw, 340px); height: 8px; border: 1px solid rgba(236,227,200,.55); border-radius: 6px; overflow: hidden; background: #2a2634; }
+  #ld .bar i { display: block; width: 38%; height: 100%; border-radius: 5px; background: linear-gradient(90deg, #12e6ff, #ff2e88); animation: swipe 1.15s ease-in-out infinite; }
+  @keyframes swipe { 0% { transform: translateX(-100%); } 100% { transform: translateX(265%); } }
+</style>
+</head>
+<body>
+<canvas id="game" tabindex="0"></canvas>
+<div id="ld" role="status" aria-live="polite">
+  <div class="brand">NEON SYNDICATE</div>
+  <div class="bar"><i></i></div>
+  <div class="sub">CARGANDO LA CIUDAD</div>
+</div>
+<script src="js/gpx.js"></script>
+<script src="js/util.js"></script>
+<script src="js/data.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/world.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/art.js"></script>
+<script src="js/chars.js"></script>
+<script src="js/street.js"></script>
+<script src="js/net.js"></script>
+<script src="js/sim.js"></script>
+<script src="js/missions.js"></script>
+<script src="js/enemies.js"></script>
+<script src="js/sprites.js"></script>
+<script src="js/render.js"></script>
+<script src="js/screens.js"></script>
+<script src="js/lobby.js"></script>
+<script src="js/touch.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
